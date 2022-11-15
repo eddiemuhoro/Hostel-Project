@@ -1,38 +1,254 @@
-.App {
-  text-align: center;
+
+/* NAVBAR */
+.navBar-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 10px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sm-icons > svg{
+  margin: 0 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.location{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* HERO's PAGE */
+.hero-wrapper{
   display: flex;
   flex-direction: column;
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/95919832.jpg?k=4c5bbf4656e7dac1ad061f64b1154da053d706692522121a1f1ceccb4ae09e47&o=&hp=1');
+  box-shadow:inset 0 0 0 2000px rgba(227, 229, 230, 0.6);
+}
+
+.hero-top{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.hero-top-right ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.hero-top-right ul >li{
+  margin: 0 5px;
+  font-size: 18px;
+}
+
+.hero-top-left{
+  color: grey;
+}
+
+.hero-bottom{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+ flex-grow: 1;
+  
 }
 
-.App-link {
-  color: #61dafb;
+
+.hero-bottom h2,p{
+  margin: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero-bottom p{
+  font-size: 25px;
+}
+
+.hero-bottom h2{
+  color: rgb(54, 54, 54);
+  font-size: 30px;
+}
+
+/* SERVICES */
+.services-wrapper{
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+
+
+.services-wrapper > div {
+    margin: 0 10px;
+    width: 30%;
+    transition: .4s ease-in-out;
+
+}
+
+.services-wrapper > div:hover {
+
+box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+ color: #000000;
+ background-color: #e4e4e4f5;
+}
+
+.service img{
+  max-height: 200px;
+  border-radius: 15px;
+}
+
+.service p{
+  color: rgb(86, 86, 86);
+  line-height: 1.4;
+  letter-spacing: .7px;
+}
+
+@media (max-width: 500px){
+  .services-wrapper{
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .services-wrapper > div{
+    width: 100%;
+    margin: 0;
   }
 }
+
+
+/* POPUP */
+.enquire-popup{
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  position: relative;
+  border-radius: 15px;
+}
+
+.enquire-popup > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.popup-overlay {
+  background-color: #141414bf;
+
+}
+
+
+
+.form-input{
+  margin-bottom: 10px;
+}
+
+/* ABOUT */
+.about-photo{
+  width: 50%;
+  margin: 20px 0;
+
+}
+.about-photo img{
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+  max-height: 300px;
+}
+
+.about-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  margin: 0 20px;
+}
+
+.about-content p{
+  line-height: 1.7;
+  color: rgb(84, 84, 84);
+  font-size: 16px;
+}
+
+@media (max-width:500px) {
+  .about-photo{
+    width: 80%;
+  }
+}
+
+/* GALLERY */
+.gallery-wrapper h2{
+  text-align: center;
+  margin: 20px 0;
+}
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 20px 0;
+
+}
+
+.gallery img{
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+  object-fit: cover;
+}
+
+@media (max-width: 500px){
+  .gallery{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+   margin: auto;
+  }
+}
+
+.photo{
+  position: relative;
+}
+
+.hover-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: rgb(252, 252, 252);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.5);
+  font-size: 13px;
+  opacity: 0;
+  transition: .3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hover-text:hover{
+ opacity: 1;
+}
+
+
+
+
+
+
+
