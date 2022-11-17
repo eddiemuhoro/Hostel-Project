@@ -5,6 +5,7 @@ import Home from './components/landingPage/Home';
 import Services from './components/Services/Services';
 import About from './components/about/About';
 import Gallery from './components/gallery/Gallery';
+import Contact from './components/contacts/Contact';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
      <Services/>
      <About />
      <Gallery />
+
+     <Contact />
     </div>
   );
 }

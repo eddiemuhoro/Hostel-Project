@@ -31,14 +31,11 @@ const Gallery = () => {
                 {photos.map(photo => (
                     <div className='photo' key={photo.id}>
                         <img src={photo.image} alt={photo.id} />
-
                     <div className='hover-text'>
-                        
                         <h4>Hover text</h4>
                         <p>Lorem ipsum dolor sit amet consectetur </p>
                     </div>
                     </div>
-
                 ))}
             </section>
         </main>

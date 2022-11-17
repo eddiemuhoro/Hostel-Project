@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   height: 60vh;
+  padding: 20px;
   background-position: center;
   background-repeat: no-repeat;
   background-image: url('https://cf.bstatic.com/xdata/images/hotel/max1024x768/95919832.jpg?k=4c5bbf4656e7dac1ad061f64b1154da053d706692522121a1f1ceccb4ae09e47&o=&hp=1');
@@ -244,11 +245,52 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .hover-text:hover{
  opacity: 1;
+
+}
+
+/* CONTACTS */
+.contact-details{
+  display: flex;
+  text-align: center;
+}
+  
+.contact-details > div{
+  width: 25%;
+  margin-bottom: 20px;
+}
+
+.contact-details > div p{
+  line-height: 1.7;
+  color: rgb(84, 84, 84);
 }
 
 
 
+.contact-form .contact-form-control{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 
+.contact-input{
+  width: 50%;
+}
 
-
+@media (max-width:700px) {
+  .contact-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-form .contact-form-control{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
