@@ -2,11 +2,14 @@ import { Call, Mail, Map, Timelapse, TimeToLeave } from '@material-ui/icons'
 import React from 'react'
 import { Button, FormControl, Input, TextField } from '@material-ui/core'
 import  { useState } from 'react'
+import axios from 'axios'
 
 
 const Contact = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const [message, setMessage] = useState('')
     const data=[
         {
             icon: <Call />,
@@ -30,6 +33,11 @@ const Contact = () => {
             desc: 'Mon - Sun : 09:00 AM - 09:00 PM'
         }
     ]
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post('http://localhost:3306', name , email , phone , message)
+        alert(`Name: ${name} Email: ${email} Phone: ${phone} Message: ${message}`)
+    }
 
   return (
     <div>
@@ -57,6 +65,7 @@ const Contact = () => {
                              color='secondary'
                              value={name}
                              placeholder='enter name'
+                                onChange={(e) => setName(e.target.value)}
                             //  value={name} 
                              />
                             <TextField className='form-input contact-input'
@@ -67,17 +76,21 @@ const Contact = () => {
                              color='secondary'
                              variant='outlined'
                              placeholder='enter email'
-                            value={email}
+                             value={email}
+                             onChange={(e)=> setEmail(e.target.value)}
                              />
 
                         <TextField className='form-input contact-input'
                              margin='dense'
                              label='phone'
-                             type='email'
+                             type='number'
                              title='name'
                              color='secondary'
                              variant='outlined'
                              placeholder='enter phone number '
+                             value={phone}
+                             onChange={(e)=> setPhone(e.target.value)}
+                          
                             
                              >
                              </TextField>
@@ -91,9 +104,11 @@ const Contact = () => {
                               id="message" 
                               type='text' 
                               aria-describedby="my-helper-text"
+                                value={message}
+                                onChange={(e)=> setMessage(e.target.value)}
                               label='message' />
 
-                            <Button className='contact-button' variant='contained' color='secondary' type='submit'>Submit</Button>
+                            <Button onClick={handleSubmit} className='contact-button' variant='contained' color='secondary' type='submit'>Submit</Button>
 
                         </FormControl>
 

@@ -253,6 +253,9 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   display: flex;
   text-align: center;
 }
+.contact-details h3{
+  color: #000000;
+}
   
 .contact-details > div{
   width: 25%;
@@ -294,3 +297,114 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     align-items: center;
   }
 }
+
+
+/* MAPS */
+.map-wrapper{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  background-color: #f8f9fa;
+
+}
+iframe{
+  width: 80%;
+  height: 300px;
+}
+
+
+/* COMMENT */
+.comment-info{
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.content-wrapper{
+  margin: 40px 0;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.content-wrapper h2{
+  margin-bottom: 0;
+}
+
+.comment-info p{
+  line-height: 1.7;
+  color: rgb(84, 84, 84);
+  font-size: 16px;
+  font-style: italic;
+}
+
+
+.comment-info  img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hr-line{
+  width: 50%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 500px){
+  .content-wrapper{
+    width: 80%;
+  }
+}
+  
+/* ROOMS section */
+.room-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media  (max-width: 500px){
+ 
+}
+  
+
+
+.room-wrapper> div{
+  margin: 10px 20px ;
+  width: 400px;
+  background-color: #f8f9fa;
+}
+
+
+
+.room-wrapper> div:hover{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.room img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.room-info p{
+  line-height: 1.7;
+  color: rgb(84, 84, 84);
+  color: #5c7893;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 500px) {
+  .room-wrapper> div{
+    width: 80%;
+  }
+}
+  
