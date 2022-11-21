@@ -1,4 +1,7 @@
-
+.App{
+  max-width: 900px;
+  margin: auto;
+}
 /* NAVBAR */
 .navBar-wrapper{
     display: flex;

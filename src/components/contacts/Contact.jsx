@@ -6,15 +6,13 @@ import axios from 'axios'
 
 
 const Contact = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
-    const [message, setMessage] = useState('')
+ 
+
     const data=[
         {
             icon: <Call />,
             title: 'Call Us',
-            desc: '+1 234 56 78',
+            desc: '+1 234 56 784 345',
             color: 'primary'
         },
         {
@@ -33,11 +31,45 @@ const Contact = () => {
             desc: 'Mon - Sun : 09:00 AM - 09:00 PM'
         }
     ]
-    const handleSubmit = (e) => {
+
+//     const [postMessage, setPostMessage] = useState({
+//         name: '',
+//         email: '',
+//         phone: '',
+//         message: ''
+// })
+
+// const handleSubmit = (e)=>{
+//     e.preventDefault();
+//     const newUser= {
+//         name: postMessage.name,
+//         email: postMessage.email,
+//         phone: postMessage.phone,
+//         message: postMessage.message
+//     }
+//     axios.post('https://localhost:5000/users/new', newUser)
+// }
+
+const [postUser, setpostUser]= useState({
+    name:'',
+    email:'',
+    phone:'',
+    message:''
+  })
+
+  const handleClick= (e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3306', name , email , phone , message)
-        alert(`Name: ${name} Email: ${email} Phone: ${phone} Message: ${message}`)
-    }
+        const newPost={
+        name: postUser.name,
+        email: postUser.email,
+        phone: postUser.phone,
+        message: postUser.message
+
+      }
+      
+      axios.post('http://localhost:5000/users/new', newPost)
+  }
+   
 
   return (
     <div>
@@ -63,10 +95,10 @@ const Contact = () => {
                              label='name'
                              title='name'
                              color='secondary'
-                             value={name}
+                             value={postUser.name}
                              placeholder='enter name'
-                                onChange={(e) => setName(e.target.value)}
-                            //  value={name} 
+                             onChange = {(e)=> setpostUser({...postUser, name: e.target.value})}
+                           
                              />
                             <TextField className='form-input contact-input'
                              margin='dense'
@@ -76,8 +108,8 @@ const Contact = () => {
                              color='secondary'
                              variant='outlined'
                              placeholder='enter email'
-                             value={email}
-                             onChange={(e)=> setEmail(e.target.value)}
+                             value={postUser.email}
+                             onChange = {(e)=> setpostUser({...postUser,email: e.target.value})}
                              />
 
                         <TextField className='form-input contact-input'
@@ -88,8 +120,8 @@ const Contact = () => {
                              color='secondary'
                              variant='outlined'
                              placeholder='enter phone number '
-                             value={phone}
-                             onChange={(e)=> setPhone(e.target.value)}
+                             value={postUser.phone}
+                             onChange = {(e)=> setpostUser({...postUser,phone: e.target.value})}
                           
                             
                              >
@@ -104,11 +136,11 @@ const Contact = () => {
                               id="message" 
                               type='text' 
                               aria-describedby="my-helper-text"
-                                value={message}
-                                onChange={(e)=> setMessage(e.target.value)}
-                              label='message' />
+                                value={postUser.message}
+                                onChange = {(e)=> setpostUser({...postUser,message: e.target.value})}
+                                label='message' />
 
-                            <Button onClick={handleSubmit} className='contact-button' variant='contained' color='secondary' type='submit'>Submit</Button>
+                            <Button onClick={handleClick} className='contact-button' variant='contained' color='secondary' type='submit'>Submit</Button>
 
                         </FormControl>
 
