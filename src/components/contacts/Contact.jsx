@@ -57,6 +57,8 @@ const [postUser, setpostUser]= useState({
     message:''
   })
 
+
+
   const handleClick= (e)=>{
         e.preventDefault()
         const newPost={
@@ -66,8 +68,16 @@ const [postUser, setpostUser]= useState({
         message: postUser.message
 
       }
+      console.log(newPost);
       
-      axios.post('http://localhost:5000/users/new', newPost)
+    //   axios.post('http://localhost:5000/users/new', newPost)
+    setpostUser({
+        name:'',
+    email:'',
+    phone:'',
+    message:''
+    })
+    alert('message sent')
   }
    
 
